@@ -1,0 +1,23 @@
+.inner {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.default {
+    padding: 10rem 0;
+}
+
+.default .title p {
+    margin: 16px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .default .title h2 {
+        font-size: 5vw;
+    }
+
+    .default .title p {
+        font-size: 2.5vw;
+    }
+}

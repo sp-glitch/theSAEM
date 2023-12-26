@@ -1,0 +1,246 @@
+* {
+    outline: 1px solid tomato;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+
+#Header {
+    position: sticky;
+    line-height: 8rem;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    z-index: 999;
+    background: #fff;
+}
+
+#Header h1 {
+    font-size: 0;
+}
+
+#Header .inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#Header .inner .util {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    font-size: 2rem;
+    color: #555;
+}
+
+#Header .mopen {
+    display: none;
+}
+
+@media (max-width: 76.8rem) {
+
+    #Header {
+        height: 80px;
+    }
+
+    #Header .mopen {
+        display: block;
+
+        position: fixed;
+        top: 2.5rem;
+        right: 3rem;
+        line-height: 1;
+
+        width: 3rem;
+        height: 3rem;
+        background: #f9f9f9;
+
+        z-index: 999;
+    }
+
+    #Header .mopen button {
+        font-size: 0;
+        border: none;
+        background: transparent;
+    }
+
+    #Header .mopen button::before,
+    #Header .mopen button::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        right: 4px;
+        height: 2px;
+        background: #333;
+    }
+
+    #Header .mopen button::before {
+        top: 0.6rem;
+    }
+
+    #Header .mopen button::after {
+        bottom: 0.6rem;
+    }
+
+    #Header .mopen.on button::before {
+        display: none;
+    }
+
+    #Header .mopen.on button::after {
+        display: none;
+    }
+
+    #Header .mopen button span::before,
+    #Header .mopen button span::after {
+        content: "";
+        position: absolute;
+        top: 1.4rem;
+        left: 0.4rem;
+        right: 0.4rem;
+        height: 0.2rem;
+        background: #333;
+    }
+
+    #Header .mopen.on button span::before {
+        transform: rotate(45deg);
+    }
+
+    #Header .mopen.on button span::after {
+        transform: rotate(-45deg);
+    }
+
+    #Header h1 {
+        position: fixed;
+        z-index: 1000;
+    }
+
+    #Header .util {
+        display: none;
+    }
+}
+
+#gnb {}
+
+#gnb>ul {
+    display: flex;
+    gap: 6rem;
+}
+
+#gnb>ul>li {
+    position: relative;
+}
+
+#gnb>ul>li~li::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -3rem;
+    width: 0.1rem;
+    height: 1.2rem;
+    background: #ddd;
+    transform: translate(0, -50%);
+}
+
+#gnb>ul>li>a {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #222;
+}
+
+
+@media (max-width: 76.8rem) {
+    #gnb {
+        /* r */
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background: #fff;
+        z-index: 999;
+
+        height: 100vh;
+        width: calc(100% - 9rem);
+        padding: 8rem 1.5rem 0 1.5rem;
+
+        border-right: 0.1rem solid #ddd;
+
+        transition: left 0.5s;
+    }
+
+    #gnb.on {
+        left: 0;
+    }
+
+    #gnb>ul {
+        /* r */
+        gap: 0;
+        flex-direction: column;
+        line-height: 4rem;
+    }
+
+
+    #gnb>ul>li~li::after {
+        /* r */
+        display: none;
+    }
+
+    #gnb>ul>li>a {
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+.main_slide {}
+
+.main_slide .itm {
+    position: relative;
+    height: 700px;
+}
+
+.main_slide .swiper .itm01 {
+    background: url(../images/main_slide01.jpeg) no-repeat center center/cover;
+}
+
+.main_slide .swiper .itm02 {
+    background: url(../images/main_slide02.jpeg) no-repeat center center/cover;
+}
+
+.main_slide .swiper .itm03 {
+    background: url(../images/main_slide03.jpeg) no-repeat center center/cover;
+}
+
+.main_slide .swiper .itm04 {
+    background: url(../images/main_slide04.jpeg) no-repeat center center/cover;
+}
+
+.main_slide .txt_box {
+    padding: 24rem 1.5rem 0 1.5rem;
+}
+
+.main_slide .txt_box span {
+    display: block;
+    font-size: 2.4rem;
+    color: #EF4130;
+
+    margin: 0 0 1.6rem 0;
+}
+
+.main_slide .txt_box p {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #222;
+
+    line-height: 1.2;
+}
+
+.main_visual {
+    height: 100rem;
+    background: #ddd;
+}
