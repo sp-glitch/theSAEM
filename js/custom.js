@@ -32,4 +32,29 @@ $(function () {
     $(".gnb").toggleClass("on");
     $(this).find(".hamburger").toggleClass("is-active");
   });
+
+  $(".product_slide").slick({
+    slidesToShow: 3,
+    arrows: false,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
+  })
+
+  $('.main_product .arrows .left').on('click', function(){
+    // 슬라이드가 뒤로 가: slick 홈페이지 참조
+    $('.product_slide').slick('slickPrev')
+})
+
+
+$('.main_product .arrows .right').on('click', function(){
+    // 슬라이드가 뒤로 가: slick 홈페이지 참조
+    $('.product_slide').slick('slickNext')
+});
 });
