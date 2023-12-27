@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>더샘</title>
+
+    <meta name="title" content="더샘">
+    <meta name="description" content="더샘">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/slick.css">
     <link rel="stylesheet" href="./css/common.css?ver=1.0">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css?ver=1.0">
 
@@ -37,20 +44,27 @@
                     </ul>
                 </nav>
                 <div class="util">
-                    <a href="">
+                    <a href="" class="sc">
                         <span class="material-symbols-outlined">
                             search
                         </span>
                     </a>
-                    <a href="">
+                    <a href="" class="sp">
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
                     </a>
+                    <a href="" class="mn">
+                        <span class="material-symbols-outlined">
+                            menu
+                        </span>
+                    </a>
                 </div>
                 <div class="mopen">
-                    <button>
-                        <span>mobile btn</span>
+                    <button class="hamburger hamburger--slider" type="button">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
                     </button>
                 </div>
             </div>
@@ -61,49 +75,82 @@
                 <div class="swiper main_slide_wrap">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide itm itm01">
-                            <div class="txt_box inner">
+                            <div class="txt_box">
                                 <span>True Mushroom LX</span>
                                 <p>
                                     360도 어느 각도에서도<br />
                                     탄탄하게 트루 머쉬룸 LX
                                 </p>
+                                <div class="btn_area">
+                                    <a href="/">
+                                        <span>자세히보기</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide itm itm02">
-                            <div class="txt_box inner">
+                            <div class="txt_box">
                                 <span>Saemmy's</span>
                                 <p>
                                     에이드처럼 촉촉하게<br />
                                     투명하게 빛나는 스밈광 틴트
                                 </p>
+                                <div class="btn_area">
+                                    <a href="/">
+                                        <span>자세히보기</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide itm itm03">
-                            <div class="txt_box inner">
+                            <div class="txt_box">
                                 <span>Silk Hair Repair</span>
                                 <p>
                                     실크처럼 부드럽고<br />
                                     윤기나는 헤어케어
                                 </p>
+                                <div class="btn_area">
+                                    <a href="/">
+                                        <span>자세히보기</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide itm itm04">
-                            <div class="txt_box inner">
+                            <div class="txt_box">
                                 <span>Cover Perfection</span>
                                 <p>
                                     피부 결점을 정교하게<br />
                                     가려주는 펜슬 컨실러
                                 </p>
+                                <div class="btn_area">
+                                    <a href="/">
+                                        <span>자세히보기</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
+                    <div class="slide_btn">
+                        <div class="swiper-button-n">
+                            <span class="material-symbols-outlined">
+                                arrow_back_ios
+                            </span>
+                        </div>
+                        <div class="swiper-button-p">
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
-            <section class="main_visual"></section>
+            <section class="main_new">
+
+            </section>
         </main>
+        <footer id="Footer" class="Footer"></footer>
     </div>
 </body>
 

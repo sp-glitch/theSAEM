@@ -1,5 +1,15 @@
+:root {
+    --mc: #EF4130;
+    --sc: #404345;
+    --wc: #ffffff;
+    --bc: #1b1b1b;
+    --gc: #ddd;
+    --lc: #bcbcbc;
+
+}
+
 * {
-    outline: 1px solid tomato;
+    outline: 1px solid tomato--;
 }
 
 html {
@@ -10,16 +20,23 @@ body {
     font-size: 1.6rem;
 }
 
+/* ---------header--------- */
 
 #Header {
-    position: sticky;
-    line-height: 8rem;
+    position: fixed;
     top: 0;
-    right: 0;
     left: 0;
-
+    right: 0;
     z-index: 999;
-    background: #fff;
+    line-height: 8rem;
+    transition: 0.5s;
+
+    background: rgba(255, 255, 255, 0.7);
+}
+
+#Header.on {
+    background: var(--wc);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 #Header h1 {
@@ -31,19 +48,21 @@ body {
     justify-content: space-between;
 }
 
-
-#Header .inner .util {
+#Header .util {
     display: flex;
+    margin: 0.6rem 0 0 0;
     gap: 2rem;
     align-items: center;
 
     font-size: 2rem;
-    color: #555;
+    color: var(--sc);
 }
 
 #Header .mopen {
     display: none;
 }
+
+/* ---------header 반응형--------- */
 
 @media (max-width: 76.8rem) {
 
@@ -51,70 +70,8 @@ body {
         height: 80px;
     }
 
-    #Header .mopen {
-        display: block;
-
-        position: fixed;
-        top: 2.5rem;
-        right: 3rem;
-        line-height: 1;
-
-        width: 3rem;
-        height: 3rem;
-        background: #f9f9f9;
-
-        z-index: 999;
-    }
-
-    #Header .mopen button {
-        font-size: 0;
-        border: none;
-        background: transparent;
-    }
-
-    #Header .mopen button::before,
-    #Header .mopen button::after {
-        content: "";
-        position: absolute;
-        left: 4px;
-        right: 4px;
-        height: 2px;
-        background: #333;
-    }
-
-    #Header .mopen button::before {
-        top: 0.6rem;
-    }
-
-    #Header .mopen button::after {
-        bottom: 0.6rem;
-    }
-
-    #Header .mopen.on button::before {
-        display: none;
-    }
-
-    #Header .mopen.on button::after {
-        display: none;
-    }
-
-    #Header .mopen button span::before,
-    #Header .mopen button span::after {
-        content: "";
-        position: absolute;
-        top: 1.4rem;
-        left: 0.4rem;
-        right: 0.4rem;
-        height: 0.2rem;
-        background: #333;
-    }
-
-    #Header .mopen.on button span::before {
-        transform: rotate(45deg);
-    }
-
-    #Header .mopen.on button span::after {
-        transform: rotate(-45deg);
+    #Header .inner {
+        justify-content: center;
     }
 
     #Header h1 {
@@ -122,10 +79,48 @@ body {
         z-index: 1000;
     }
 
-    #Header .util {
+    #Header .util .sp {
         display: none;
     }
+
+    #Header .util .mn {
+        display: none;
+    }
+
+    #Header .util .sc {
+        display: block;
+
+        position: fixed;
+        right: 3.6rem;
+        top: 3rem;
+        line-height: 1;
+        z-index: 999;
+    }
+
+    #Header .mopen {
+        display: block;
+        position: fixed;
+        left: 3.6rem;
+        top: 3rem;
+        line-height: 1;
+        z-index: 999;
+    }
+
+    #Header .mopen .hamburger {
+        padding: 0;
+    }
+
+    #Header .mopen .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+        width: 3rem;
+        height: 0.2rem;
+    }
+
 }
+
+
+/* ---------gnb--------- */
 
 #gnb {}
 
@@ -145,7 +140,7 @@ body {
     left: -3rem;
     width: 0.1rem;
     height: 1.2rem;
-    background: #ddd;
+    background: var(--lc);
     transform: translate(0, -50%);
 }
 
@@ -153,9 +148,10 @@ body {
     display: block;
     font-size: 1.8rem;
     font-weight: 500;
-    color: #222;
+    color: var(--bc);
 }
 
+/* ---------gnb 반응형--------- */
 
 @media (max-width: 76.8rem) {
     #gnb {
@@ -163,14 +159,14 @@ body {
         position: fixed;
         top: 0;
         left: -100%;
-        background: #fff;
+        background: var(--wc);
         z-index: 999;
 
         height: 100vh;
-        width: calc(100% - 9rem);
+        width: 100%;
         padding: 8rem 1.5rem 0 1.5rem;
 
-        border-right: 0.1rem solid #ddd;
+        border-right: 0.1rem solid var(--gc);
 
         transition: left 0.5s;
     }
@@ -181,6 +177,7 @@ body {
 
     #gnb>ul {
         /* r */
+        margin: 4rem 0 0 0;
         gap: 0;
         flex-direction: column;
         line-height: 4rem;
@@ -193,16 +190,26 @@ body {
     }
 
     #gnb>ul>li>a {
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid var(--gc);
     }
 }
 
-.main_slide {}
+/* ---------main : content--------- */
+
+#content {}
+
+/* ---------main_slide--------- */
+
+.main_slide {
+    /* position: relative; */
+}
 
 .main_slide .itm {
     position: relative;
-    height: 700px;
+    height: 100vh;
 }
+
+/* ---------main_slide 이미지--------- */
 
 .main_slide .swiper .itm01 {
     background: url(../images/main_slide01.jpeg) no-repeat center center/cover;
@@ -220,27 +227,177 @@ body {
     background: url(../images/main_slide04.jpeg) no-repeat center center/cover;
 }
 
+/* ---------main_slide 택스트--------- */
+
 .main_slide .txt_box {
-    padding: 24rem 1.5rem 0 1.5rem;
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 36.6rem 1.5rem 0 1.5rem;
 }
 
-.main_slide .txt_box span {
+.main_slide .txt_box>span {
     display: block;
     font-size: 2.4rem;
-    color: #EF4130;
+    font-weight: 500;
 
-    margin: 0 0 1.6rem 0;
+    color: var(--mc);
+
+    margin: 0 0 1.2rem 0;
+    white-space: nowrap;
 }
 
 .main_slide .txt_box p {
     font-size: 5rem;
     font-weight: 700;
-    color: #222;
+    color: var(--bc);
 
     line-height: 1.2;
+    white-space: nowrap;
+
+    margin: 0 0 3rem 0;
 }
 
-.main_visual {
+.main_slide .btn_area a {
+    display: inline-block;
+    text-align: center;
+    padding: 1rem 2rem 1rem 2rem;
+    border: 0.1rem solid var(--sc);
+}
+
+.main_slide .btn_area a span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--sc);
+}
+
+/* ---------main_slide 페이지네이션--------- */
+
+.main_slide .swiper-pagination {
+    bottom: 10rem;
+}
+
+.main_slide .swiper-pagination-bullet {
+    width: 1rem;
+    height: 1rem;
+    background: transparent;
+    border: 1px solid var(--sc);
+    opacity: 1;
+}
+
+.main_slide .swiper-pagination-bullet-active {
+    width: 40px;
+    transition: width .5s;
+    border-radius: 5px;
+    background: var(--sc);
+    border: 1px solid transparent;
+}
+
+/* ---------main_slide 화살표--------- */
+
+.main_slide .slide_btn {
+    position: absolute;
+    max-width: 150rem;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+
+    transform: translate(-50%, -50%);
+}
+
+.main_slide .slide_btn span {
+    font-size: 4rem;
+    color: var(--sc);
+}
+
+.main_slide .swiper-button-n {
+    position: absolute;
+    left: 0;
+}
+
+.main_slide .swiper-button-p {
+    position: absolute;
+    right: 0;
+}
+
+/* ---------main_slide 반응형--------- */
+
+@media (max-width: 768px) {
+    .main_slide {}
+
+    .main_slide .itm {
+        /* r */
+        height: calc(100vh - 250px);
+    }
+
+    .main_slide .txt_box {
+        max-width: 120rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 28rem 1.5rem 0 1.5rem;
+    }
+
+    .main_slide .txt_box>span {
+        display: block;
+        font-size: 3.5vw;
+        font-weight: 500;
+
+        color: var(--wc);
+
+        margin: 0 0 1.2rem 0;
+        text-align: center;
+        white-space: nowrap;
+
+        text-shadow: 1px 1px 3px var(--bc);
+    }
+
+    .main_slide .txt_box p {
+
+        font-weight: 700;
+        color: var(--wc);
+
+        font-size: 6vw;
+        line-height: 1.2;
+
+        text-align: center;
+        white-space: nowrap;
+
+        margin: 0 0 3rem 0;
+        text-shadow: 1px 1px 3px var(--bc);
+    }
+
+    .main_slide .btn_area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main_slide .btn_area a {
+        display: inline-block;
+        text-align: center;
+        padding: 1rem 2rem 1rem 2rem;
+        border: 0.1rem solid var(--wc);
+
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .main_slide .btn_area a span {
+        font-size: 2.4vw;
+
+        font-weight: 500;
+        line-height: 1;
+        color: var(--wc);
+    }
+
+    .main_slide .slide_btn {
+        display: none;
+    }
+}
+
+
+.main_new {
     height: 100rem;
-    background: #ddd;
+    background: var(--gc);
 }
