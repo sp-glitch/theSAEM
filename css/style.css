@@ -696,6 +696,8 @@ body {
         text-align: center;
     }
 
+    .main_product .product_slide .desc {}
+
     .main_product .product_slide .desc span {
         font-size: 20px;
         text-align: center;
@@ -772,7 +774,7 @@ body {
     font-size: 1.4rem;
     color: var(--gc);
 
-    white-space: nowrap;
+    /* white-space: wrap; */
 }
 
 /* ---------Footer 중간--------- */
@@ -807,7 +809,7 @@ body {
     color: #bcbcbc;
     line-height: 1.3;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .footer_bottom .add p {
@@ -815,7 +817,7 @@ body {
     color: #bcbcbc;
     line-height: 1.3;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .footer_bottom .add .ft {
@@ -847,7 +849,7 @@ body {
     color: #bcbcbc;
     line-height: 1.3;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 .footer_last .icon {
@@ -855,10 +857,11 @@ body {
     color: #bcbcbc;
     line-height: 1.3;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
 }
 
 /* ---------Footer 반응형--------- */
+
 
 @media (max-width:768px) {
 
