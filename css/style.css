@@ -335,7 +335,9 @@ body {
 /* ---------main_slide 반응형--------- */
 
 @media (max-width: 768px) {
-    .main_slide {}
+    .main_slide {
+        position: relative;
+    }
 
     .main_slide .itm {
         /* r */
@@ -343,10 +345,13 @@ body {
     }
 
     .main_slide .txt_box {
+        position: absolute;
+
+        top: 38%;
         max-width: 120rem;
         width: 100%;
         margin: 0 auto;
-        padding: 28rem 1.5rem 0 1.5rem;
+        padding: 0;
     }
 
     .main_slide .txt_box>span {
@@ -389,6 +394,13 @@ body {
     .main_slide .slide_btn {
         display: none;
     }
+
+    .main_slide .swiper-pagination {
+        position: absolute;
+
+        bottom: 10%;
+    }
+
 }
 
 /* ---------main_new--------- */
